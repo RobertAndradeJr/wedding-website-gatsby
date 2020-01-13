@@ -1,0 +1,52 @@
+.navbar-toggler {
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.navbar-toggler-icon,
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 5px;
+  opacity: 1;
+  left: 0;
+  transition: transform 0.25s ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.navbar-toggler-icon {
+  transform: translate3d(0px, 0, 0);
+
+  .navbar-toggler:not(.collapsed) & {
+    transform: translate3d(60px, 0, 0);
+  }
+}
+
+.navbar-toggler-icon::before {
+  content: " ";
+  transform: translate3d(0, -9px, 0);
+
+  .navbar-toggler:not(.collapsed) & {
+    transform: translate3d(-60px, 0, 0) rotate(135deg);
+  }
+}
+
+.navbar-toggler-icon::after {
+  content: " ";
+  transform: translate3d(0, 9px, 0);
+
+  .navbar-toggler:not(.collapsed) & {
+    transform: translate3d(-60px, 0, 0) rotate(-135deg);
+  }
+}

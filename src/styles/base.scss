@@ -1,0 +1,18 @@
+body {
+  color: $white;
+  fill: currentColor;
+}
+
+svg {
+  fill: currentColor;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-top: 1px solid #6c757d;
+}
+section {
+  padding-top: 60px;
+  min-height: 100vh;
+}

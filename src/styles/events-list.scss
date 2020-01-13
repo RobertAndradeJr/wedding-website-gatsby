@@ -1,0 +1,7 @@
+.events-list {
+  & .column0 {
+      @include media-breakpoint-up(md) {
+        border-right: 1px solid $white;
+      }
+  }
+}

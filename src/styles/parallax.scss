@@ -1,0 +1,35 @@
+.parallax {
+  &.bell-museum {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(https://www.bellmuseum.umn.edu/wp-content/uploads/2019/02/horizon-hall-hero.jpg);
+  }
+  &.city {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../assets/msp.gif");
+  }
+  &.hero {
+    height: 98vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../assets/engagement_photo.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+  }
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.video-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 420px;
+  &.jumbotron {
+    background-color: transparent;
+  }
+}

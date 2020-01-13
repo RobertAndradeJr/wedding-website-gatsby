@@ -1,0 +1,38 @@
+.carousel {
+  min-height: 550px;
+  & img {
+    max-height: 500px;
+    padding-bottom: 50px;
+  }
+  &-caption {
+    background: rgba(0,0,0,0.75);
+    width: 101%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: -1px;
+  }
+  &-indicators {
+    padding-top: 50px;
+  }
+}
+.figure-caption {
+  text-align: left;
+}
+.instagram--image {
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;
+  & img {
+    padding: 1em;
+    max-width: 100%;
+    max-height: 320px;
+    &:hover {
+      border: 10px solid $warning;
+      padding: 0;
+      transition: all ease-in-out 250ms;
+    }
+  }
+}
+
+
