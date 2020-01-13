@@ -1,5 +1,5 @@
 import React from 'react';
-import InvitationIllustration from '../assets/undraw_invite.svg';
+import InvitationIllustration from '../images/undraw_invite.svg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

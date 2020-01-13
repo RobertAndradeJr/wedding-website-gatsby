@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-// import Scrollspy from 'react-scrollspy';
-import { NavStrings } from './Strings';
-import UseScrollSpy from '../utils/UseScrollSpy';
-import HeartLogo from './HeartLogo';
-import { linkifyAll, localLink, externalLink } from '../utils/StringHelpers';
-import removeActiveClasses from '../utils/RemoveActiveClasses';
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React, {useState} from "react"
+import Navbar from "react-bootstrap/Navbar"
+import UseScrollSpy from "../utils/UseScrollSpy"
+import Nav from "react-bootstrap/Nav"
+import { localLink, externalLink } from "../utils/StringHelpers"
+import HeartLogo from "./HeartLogo"
+import { NavStrings } from "./Strings"
 
 const { buttonLabels } = NavStrings;
 
-export const NavBar: React.FC = () => {
+
+const Header = ({ siteTitle }) => {
   const scroll = UseScrollSpy(50);
   const [open, setOpen] = useState(false);
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      bg={scroll || open ? 'warning' : ''}
-      variant={scroll || open ? 'light' : 'dark'}
-      fixed="top"
-      id="navbar"
-      onSelect={removeActiveClasses}
+    <header
+      style={{
+        background: `rebeccapurple`,
+        marginBottom: `1.45rem`,
+      }}
     >
-      <Nav.Link
+      <Navbar
+        as="header"
+        collapseOnSelect
+        expand="lg"
+        bg={scroll || open ? 'warning' : ''}
+        variant={scroll || open ? 'light' : 'dark'}
+        fixed="top"
+        id="navbar"
+        // onSelect={removeActiveClasses}
+      >
+              <Nav.Link
         as={Link}
         className="navbar-brand"
         eventKey={'home'}
@@ -62,8 +69,17 @@ export const NavBar: React.FC = () => {
           ))}
         </Nav>
       </Navbar.Collapse>
-    </Navbar>
-  );
-};
+      </Navbar>
+    </header>
+  )
+}
 
-export default NavBar;
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
+
+export default Header

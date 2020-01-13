@@ -1,7 +1,7 @@
 import React from 'react';
 import { HowWeMetStrings, altTitles } from './Strings';
-import HowWeMetRobert from '../assets/howwemet-robert.jpg';
-import HowWeMetMandi from '../assets/howwemet-mandi.jpg';
+import HowWeMetRobert from '../images/howwemet-robert.jpg';
+import HowWeMetMandi from '../images/howwemet-mandi.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

@@ -1,0 +1,13 @@
+// Override default variables before the import
+$body-bg: #000;
+$body-text-color: #fff;
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
+@import "./styles/base.scss";
+@import "./styles/animated-arrow.scss";
+@import "./styles/engagement-pics.scss";
+@import "./styles/error.scss";
+@import "./styles/events-list.scss";
+@import "./styles/navbar-animation.scss";
+// @import "./styles/parallax.scss";
+@import "./styles/sections.scss";

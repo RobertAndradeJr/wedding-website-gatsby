@@ -1,13 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../custom.scss"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Home from "./Home";
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <Home />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -16,6 +19,7 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link>
     <Link to="/Hotel/">Go to Hotel</Link>
+    <Link to="/Home/">Go to Home</Link>
   </Layout>
 )
 
