@@ -1,11 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { InstagramPicsStrings, InstaLink } from '../components/Strings';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Fallback from '../components/Fallback';
 import Layout from '../components/layout';
-const PicturesGrid = lazy(() => import('../components/PicturesGrid'));
+import PicturesGrid from '../components/PicturesGrid'
 
 const {
   HASHTAG_LINK,
@@ -37,9 +36,7 @@ const social: React.FC = () => (
         </Col>
       </Row>
       <Row>
-        <Suspense fallback={<Fallback />}>
-          <PicturesGrid />
-        </Suspense>
+        <PicturesGrid />
       </Row>
     </Container>
   </Layout>
