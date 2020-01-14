@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             </Col>
           </Row>
           <Row>
-            {/* <Col>{countdownOutput}</Col> */}
+            <Col>{countdownOutput}</Col>
           </Row>
           <DownArrows />
         </Container>
