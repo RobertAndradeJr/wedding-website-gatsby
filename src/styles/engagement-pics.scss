@@ -14,14 +14,12 @@
     }
   }
 }
-.carousel-item {
-  height: 100%;
-  > div {
-    height: 650px !important;
-    padding-bottom: 0 !important;
-
-  }
-  .gatsby-image-wrapper {
+.carousel {
+  &-inner {
     height: 650px;
+  }
+  &-item.active {
+    height: 650px;
+  
   }
 }

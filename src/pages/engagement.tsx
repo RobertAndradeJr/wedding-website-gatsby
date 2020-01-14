@@ -19,7 +19,6 @@ const engagement: React.FC = () => {
     query {
       allFile(
         filter: {
-          extension: { regex: "/(jpeg|jpg|gif|png)/" }
           relativeDirectory: { eq: "engagement" }
         }
       ) {
@@ -27,9 +26,8 @@ const engagement: React.FC = () => {
           node {
             childImageSharp {
               id
-              fluid(maxWidth: 650, quality: 100) {
-                ...GatsbyImageSharpFluid
-                presentationWidth
+              fixed(height: 650, fit: COVER) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
@@ -53,17 +51,18 @@ const engagement: React.FC = () => {
           </Col>
         </Row>
         <Row>
-          <Carousel className="carousel-container w-100" activeIndex="4">
-            {items.map((item, i) => {
-              const { id, fluid } = item.node.childImageSharp
-              console.log(fluid)
-              return (
-                <Carousel.Item key={id}>
-                  <Img fluid={fluid} />
-                </Carousel.Item>
-              )
-            })}
-          </Carousel>
+          <Col>
+            <Carousel>
+              {items.map((item, i) => {
+                const { id, fixed } = item.node.childImageSharp
+                return (
+                  <Carousel.Item key={id}>
+                    <Img fixed={fixed} />
+                  </Carousel.Item>
+                )
+              })}
+            </Carousel>
+          </Col>
         </Row>
       </Container>
     </Layout>

@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   const { Days, Hours, Minutes, Seconds } = UseCountdown(date, {});
   const countdownOutput = `${Days}d ${Hours}h ${Minutes}m ${Seconds}s`;
   return (
-    <Jumbotron fluid id="home" className="text-center">
+    <Jumbotron fluid id="home" className="text-center mt-5">
       <Container className="parallax hero" fluid>
         <Row>
           <Col>
