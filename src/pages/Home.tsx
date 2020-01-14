@@ -5,7 +5,6 @@ import EventsList from '../components/EventsList';
 import City from '../components/City';
 import HowWeMet from '../components/HowWeMet';
 import Directions from '../components/Directions';
-import Layout from '../components/layout';
 
 export const Home: React.FC = () => {
   useEffect(() => {
@@ -17,14 +16,14 @@ export const Home: React.FC = () => {
       });
   });
   return (
-    <Layout>
+    <>
       <Hero />
       <Invitation />
       <HowWeMet />
       <EventsList />
       <City />
       <Directions />
-    </Layout>
+    </>
   );
 };
 
