@@ -6,8 +6,7 @@ import { HomeStrings, CountdownStrings } from "./Strings"
 import UseCountdown from "../utils/UseCountdown"
 import Container from "react-bootstrap/Container"
 import DownArrows from "./animations/DownArrows"
-import { useStaticQuery, graphql } from "gatsby"
-import BackgroundImage from 'gatsby-background-image'
+import { HeroBackground } from "./HeroBackground"
 
 const { detail, title } = HomeStrings
 const { WEDDING_DATE, WEDDING_LOCATION } = detail
@@ -15,28 +14,11 @@ const date = CountdownStrings.WEDDING_DATE
 const SUBTITLE = `${WEDDING_DATE} · ${WEDDING_LOCATION}`
 
 const Hero: React.FC = () => {
-  const heroImage = useStaticQuery(graphql`
-    query {
-      fileName: file(relativePath: { eq: "engagement_photo.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1080) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-  const backgroundImageStack = [
-    heroImage.fileName.childImageSharp.fluid,
-    'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))',
-  ].reverse()
   const { Days, Hours, Minutes, Seconds } = UseCountdown(date, {})
   const countdownOutput = `${Days}d ${Hours}h ${Minutes}m ${Seconds}s`
   return (
-    <BackgroundImage Tag="section" id="home" fluid={backgroundImageStack} style={{
-      backgroundAttachment: 'fixed'
-    }}>
-      <Jumbotron fluid  className="text-center bg-transparent">
+    <Jumbotron fluid className="text-center bg-transparent">
+      <HeroBackground>
         <Container className="parallax hero" fluid>
           <Row>
             <Col>
@@ -49,13 +31,12 @@ const Hero: React.FC = () => {
             </Col>
           </Row>
           <Row>
-            <Col>{countdownOutput}</Col>
+            {/* <Col>{countdownOutput}</Col> */}
           </Row>
           <DownArrows />
         </Container>
-      </Jumbotron>
-
-    </BackgroundImage>
+      </HeroBackground>
+    </Jumbotron>
   )
 }
 
